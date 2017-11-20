@@ -4747,3 +4747,7 @@ body.is-loading #intro:not(.hidden) + #header + #nav {
   }
 
 }
+
+#navPanelToggle {
+  display: none !important;
+}
