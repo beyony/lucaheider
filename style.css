@@ -16,9 +16,13 @@ html {
 }
 
 body {
-  background-color: #222;
-  color: #fff;
+    color: #fff;
+    height: 100%;
+    background: black;new
+    background-image: -webkit-linear-gradient(135deg, rgba(67, 83, 255, 0) 33%, rgba(67, 83, 255, .25));
+    background-image: linear-gradient(315deg, rgba(67, 83, 255, 0) 33%, rgba(67, 83, 255, .25));
 }
+
 
 .start-screen {
   display: -webkit-box;
