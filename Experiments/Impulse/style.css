@@ -1,0 +1,33 @@
+/* CSS */
+
+body,
+html {
+  margin: 0;
+  background: -webkit-radial-gradient(center, ellipse cover, #4c5480 10%, #4f6dab 90%);
+}
+
+canvas {
+  display: block;
+  cursor: crosshair;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  letter-spacing: 4px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #AAA;
+}
+
+
+.panel {
+  position: absolute;
+}

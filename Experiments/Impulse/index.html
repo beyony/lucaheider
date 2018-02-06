@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <title>
+    Impulse Test
+  </title>
+</head>
+
+<body>
+
+  <div class="panel">
+    <input class="input" type="number" data-bind="value: lineWidth">
+    <input class="input" type="range" min="0.001" max="0.1" step="0.001" data-bind="value: widthToSpikeLengthRatio">
+
+    <select class="input" data-bind="options: availableFontSizes, value: fontSize"></select>
+    <select class="input" data-bind="options: availableFontFamilies, value: fontFamily"></select>
+    <select class="input" data-bind="options: availableFontWeights, value: fontWeight"></select>
+
+    <button data-bind="click: reduceParticleSum">Reduce!</button>
+  </div>
+
+
+  <canvas id="canvas"></canvas>
+  <h2>Move the mouse!</h2>
+  <h6>Particles: <span data-bind="text: particlesLength"></span></h6>
+
+
+
+</body>
+<script type="text/javascript" src="knockout-3.4.0.js"></script>
+<script>
+  var inputs = document.getElementsByClassName('input');
+  for (var index = 0; index < inputs.length; ++index) {
+    inputs[index].addEventListener("change", function() {
+      parameterVM.reset();
+    });
+  }
+
+
+  // ViewModel
+  var parameterVM = {
+    fontWeight: ko.observable("bold"),
+    fontSize: ko.observable(200),
+    fontFamily: ko.observable("Arial"),
+    lineWidth: ko.observable(0.25),
+    widthToSpikeLengthRatio: ko.observable(0.025),
+    getFont: function() {
+      return "" + this.fontWeight() + " " + this.fontSize() + "px " + this.fontFamily() + ", Arial, Helvetica, sans-serif"
+    },
+    reset: function() {
+      if (typeof reset === "function") {
+
+        setTimeout(reset, 10);
+      }
+    },
+    reduceParticleSum: function() {
+      this.particlesLength(reduceParticleSum());
+    },
+
+    availableFontFamilies: ko.observableArray(["Arial", "Verdana", "Georgia", "Impact"]),
+    availableFontWeights: ko.observableArray(["normal", "italic", "bold", "lighter"]),
+    availableFontSizes: ko.observableArray([100, 150, 200, 250, 300]),
+
+    particlesLength: ko.observable(0)
+  }
+
+  ko.applyBindings(parameterVM);
+</script>
+<script type="text/javascript" src="javascript.js"></script>
+
+</html>
