@@ -68,11 +68,7 @@ class Vector {
 
 
 /*
-  Also available at GitHub:
-  https://github.com/DonKarlssonSan/vectory
-  
-  and npm:
-  https://www.npmjs.com/package/vectory-lib
+  -----------------------------------------------------------------
 */
 
 const config = {
@@ -92,6 +88,7 @@ class Planet {
   constructor(x, y, g) {
     this.pos = new Vector(x, y);
     this.g = g;
+    this.vel = 10;
   }
   draw() {
     ctx.fillStyle = "rgba(0,0,0,0)";
@@ -141,9 +138,9 @@ let tick;
 function setup() {
   tick = 0;
   planets = [];
-  let len = 1; //Math.round(Math.random() * 3 + 3);
+  let len = 2; //Math.round(Math.random() * 3 + 3);
   for (let i = 0; i < len; i++) {
-    let p = new Planet(50 + i * 100, 340, i ? 1000 : 4000);
+    let p = new Planet(0, window.innerHeight / 2, 2000);
     planets.push(p);
   }
   canvas = document.querySelector("#canvas");
@@ -207,7 +204,7 @@ function drawText() {
   ctx.textBaseline = "middle";
   ctx.lineWidth = parameterVM.lineWidth();
   ctx.strokeStyle = "white";
-  ctx.strokeText(config.text, w / 2, h / 2);
+  ctx.strokeText(parameterVM.text(), w / 2, h / 2);
   ctx.restore();
   let imageData = ctx.getImageData(0, 0, w, h);
 
@@ -233,12 +230,21 @@ function drawText() {
 function updatePlanets() {
   let len = planets.length;
   for (let i = 1; i < len; i++) {
-    let angle = Math.PI * 2 / (len - 1) * i;
-    let x = A * Math.sin(a * tick / 100 + angle) + w / 2;
-    let y = B * Math.sin(b * tick / 100 + angle) + h / 2;
+    //    let angle = Math.PI * 2 / (len - 1) * i;
+    //    let x = A * Math.sin(a * tick / 100 + angle) + w / 2;
+    //    let y = B * Math.sin(b * tick / 100 + angle) + h / 2;
+
     let p = planets[i];
-    p.pos.x = x;
-    p.pos.y = y;
+
+    p.pos.x += p.vel;
+
+    if (p.pos.x >= window.innerWidth) {
+      p.vel = -p.vel;
+    } else if (p.pos.x <= 0) {
+      p.vel = -p.vel;
+      console.log(p.vel);
+    }
+    //p.pos.y = y;
     p.draw();
   }
 }
