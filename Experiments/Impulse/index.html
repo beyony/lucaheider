@@ -33,6 +33,8 @@
             <input class="" type="text" data-bind="value: text">
         </div>
       <button data-bind="click: addText">Add text!</button>
+      animationTime<input class="input" type="range" min="100" max="10000" step="100" data-bind="value: animationTime">
+      <button data-bind="click: startAnimation">Start animation!</button>
       <button data-bind="click: stopAnimation">Stop animation!</button>
   </div>
     
@@ -89,6 +91,18 @@
     reduceParticleSum: function() {
       this.particlesLength(reduceParticleSum());
     },
+      animationTime: ko.observable(500),
+      startAnimation: function() {
+        var count = 0;
+        
+        var textInterval = setInterval(function(){
+            if(parameterVM.text() !== parameterVM.textArray()[count % parameterVM.textArray().length].text) {
+            parameterVM.text(parameterVM.textArray()[count % parameterVM.textArray().length].text);
+            parameterVM.reset();
+                }
+            ++count;
+        }, parameterVM.animationTime());
+      },
       stopAnimation: function() {
           clearInterval(textInterval);
       },
@@ -105,20 +119,7 @@
   ko.applyBindings(parameterVM);
 </script>
     
-    <script>
-            var count = 0;
-        
-        var textInterval = setInterval(function(){
-            if(parameterVM.text() !== parameterVM.textArray()[count % parameterVM.textArray().length].text) {
-            parameterVM.text(parameterVM.textArray()[count % parameterVM.textArray().length].text);
-            parameterVM.reset();
-                }
-            ++count;
-        }, 2000);
-        
-        
-        
-    </script>
+
     
 <script type="text/javascript" src="javascript.js"></script>
 
