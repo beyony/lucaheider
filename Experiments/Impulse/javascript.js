@@ -71,12 +71,8 @@ class Vector {
   -----------------------------------------------------------------
 */
 
-const config = {
-  text: "IMPULSE"
-};
-
 const colorConfig = {
-  particleOpacity: 0.5,
+  particleOpacity: 0.99,
   baseHue: 350,
   hueRange: 9,
   hueSpeed: 0.04,
@@ -138,7 +134,7 @@ let tick;
 function setup() {
   tick = 0;
   planets = [];
-  let len = 2; //Math.round(Math.random() * 3 + 3);
+  let len = 1; //Math.round(Math.random() * 3 + 3);
   for (let i = 0; i < len; i++) {
     let p = new Planet(0, window.innerHeight / 2, 2000);
     planets.push(p);
@@ -151,7 +147,7 @@ function setup() {
 }
 
 function reset() {
-  hue = colorConfig.baseHue;
+  hue = parameterVM.baseHue();
   w = canvas.width = window.innerWidth;
   h = canvas.height = window.innerHeight;
   spikeLength = w * parameterVM.widthToSpikeLengthRatio();
@@ -194,6 +190,7 @@ function reduceParticleSum() {
   return particles.length;
 }
 
+var textX, textY;
 
 function drawText() {
   ctx.save();
@@ -205,6 +202,8 @@ function drawText() {
   ctx.lineWidth = parameterVM.lineWidth();
   ctx.strokeStyle = "white";
   ctx.strokeText(parameterVM.text(), w / 2, h / 2);
+    textX = w / 2;
+    textY = h / 2;
   ctx.restore();
   let imageData = ctx.getImageData(0, 0, w, h);
 
@@ -250,9 +249,9 @@ function updatePlanets() {
 }
 
 function updateParticles() {
-  hue += colorConfig.hueSpeed;
-  let h = Math.sin(hue) * colorConfig.hueRange + colorConfig.baseHue;
-  ctx.strokeStyle = `hsla(${h}, ${colorConfig.colorSaturation}%, 50%, ${colorConfig.particleOpacity})`;
+  hue += parameterVM.hueSpeed();
+  let h = Math.sin(hue) * parameterVM.hueRange() + parameterVM.baseHue();
+  ctx.strokeStyle = `hsla(${h}, ${parameterVM.colorSaturation()}%, 50%, ${parameterVM.particleOpacity()})`;
   particles.forEach(p => {
     // Apply the force of each planet (repeller) to the current particle
     planets.forEach(planet => {
@@ -268,7 +267,31 @@ function updateParticles() {
     });
     p.draw();
   });
+    
+    ctx.fillStyle = `hsla(${h}, ${parameterVM.colorSaturation()}%, 50%, ${parameterVM.textOpacity()})`;
+    
+    ctx.font = parameterVM.getFont();
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.lineWidth = parameterVM.lineWidth();
+    //ctx.fillStyle = "white";
+    ctx.fillText(parameterVM.text(), textX, textY);
+    
+    
+    
 }
 
 setup();
 draw();
+
+
+
+
+
+
+
+
+
+
+
+

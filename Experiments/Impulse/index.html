@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <link href='http://fonts.googleapis.com/css?family=Nova+Flat' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="style.css" />
   <title>
     Impulse Test
@@ -22,7 +23,20 @@
     <button data-bind="click: reduceParticleSum">Reduce!</button>
 
     <input class="input text" type="text" data-bind="value: text">
+      
+      opacity: <input class="input" type="range" min="0.01" max="1" step="0.01" data-bind="value: particleOpacity">
+      hueRange: <input class="input" type="range" min="1" max="100" step="1" data-bind="value: hueRange">
+      colorSaturation: <input class="input" type="range" min="1" max="100" step="1" data-bind="value: colorSaturation">
+      textOpacity: <input class="input" type="range" min="0.01" max="1" step="0.01" data-bind="value: textOpacity">
+      
+        <div class="multiInput" data-bind="foreach: textArray">
+            <input class="" type="text" data-bind="value: text">
+        </div>
+      <button data-bind="click: addText">Add text!</button>
+      <button data-bind="click: stopAnimation">Stop animation!</button>
   </div>
+    
+
 
 
   <canvas id="canvas"></canvas>
@@ -44,6 +58,19 @@
 
   // ViewModel
   var parameterVM = {
+      
+
+  particleOpacity: ko.observable(0.99),
+  textOpacity: ko.observable(0.5),
+  baseHue: ko.observable(350),
+  hueRange: ko.observable(9),
+  hueSpeed: ko.observable(0.04),
+  colorSaturation: ko.observable(100),
+
+      
+      
+      
+    textArray: ko.observableArray([{text: "huhu"}]),
     text: ko.observable("IMPULSE"),
     fontWeight: ko.observable("bold"),
     fontSize: ko.observable(100),
@@ -62,8 +89,14 @@
     reduceParticleSum: function() {
       this.particlesLength(reduceParticleSum());
     },
+      stopAnimation: function() {
+          clearInterval(textInterval);
+      },
+      addText: function() {
+          this.textArray.push({text: "new"});
+      },
 
-    availableFontFamilies: ko.observableArray(["Arial", "Verdana", "Georgia", "Impact"]),
+    availableFontFamilies: ko.observableArray(["Nova Flat","Arial", "Verdana", "Georgia", "Impact"]),
     availableFontWeights: ko.observableArray(["normal", "italic", "bold", "lighter"]),
 
     particlesLength: ko.observable(0)
@@ -71,6 +104,46 @@
 
   ko.applyBindings(parameterVM);
 </script>
+    
+    <script>
+            var count = 0;
+        
+        var textInterval = setInterval(function(){
+            if(parameterVM.text() !== parameterVM.textArray()[count % parameterVM.textArray().length].text) {
+            parameterVM.text(parameterVM.textArray()[count % parameterVM.textArray().length].text);
+            parameterVM.reset();
+                }
+            ++count;
+        }, 2000);
+        
+        
+        
+    </script>
+    
 <script type="text/javascript" src="javascript.js"></script>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
