@@ -3,11 +3,13 @@
   padding: 0;
   border: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
-*:before, *:after {
+
+*:before,
+*:after {
   -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 html {
@@ -16,11 +18,11 @@ html {
 }
 
 body {
-    color: #fff;
-    height: 100%;
-    background: black;new
-    background-image: -webkit-linear-gradient(135deg, rgba(67, 83, 255, 0) 33%, rgba(67, 83, 255, .25));
-    background-image: linear-gradient(315deg, rgba(67, 83, 255, 0) 33%, rgba(67, 83, 255, .25));
+  color: #fff;
+  height: 100%;
+  background: black;
+  background-image: -webkit-linear-gradient(135deg, rgba(67, 83, 255, 0) 33%, rgba(67, 83, 255, .25));
+  background-image: linear-gradient(315deg, rgba(67, 83, 255, 0) 33%, rgba(67, 83, 255, .25));
 }
 
 
@@ -29,15 +31,15 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: nowrap column;
-          flex-flow: nowrap column;
+  -ms-flex-flow: nowrap column;
+  flex-flow: nowrap column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-height: 100vh;
 }
 
@@ -46,6 +48,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   margin: 24px 0;
+  border-radius: 50%;
+  height: 200px;
 }
 
 .loading__element {
@@ -55,72 +59,74 @@ body {
 
 [class*="el"] {
   -webkit-animation: bouncing 2s infinite ease;
-          animation: bouncing 2s infinite ease;
+  animation: bouncing 2s infinite ease;
 }
 
 .el1 {
   -webkit-animation-delay: 0.1s;
-          animation-delay: 0.1s;
+  animation-delay: 0.1s;
 }
 
 .el2 {
   -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 
 .el3 {
   -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
+  animation-delay: 0.3s;
 }
 
 .el4 {
   -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
+  animation-delay: 0.4s;
 }
 
 .el5 {
   -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
 
 .el6 {
   -webkit-animation-delay: 0.6s;
-          animation-delay: 0.6s;
+  animation-delay: 0.6s;
 }
 
 .el7 {
   -webkit-animation-delay: 0.7s;
-          animation-delay: 0.7s;
+  animation-delay: 0.7s;
 }
 
 .el8 {
   -webkit-animation-delay: 0.8s;
-          animation-delay: 0.8s;
+  animation-delay: 0.8s;
 }
 
 .el9 {
   -webkit-animation-delay: 0.9s;
-          animation-delay: 0.9s;
+  animation-delay: 0.9s;
 }
 
 @-webkit-keyframes bouncing {
-  0%, 100% {
+  0%,
+  100% {
     -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
   }
   50% {
     -webkit-transform: scale3d(0, 0, 1);
-            transform: scale3d(0, 0, 1);
+    transform: scale3d(0, 0, 1);
   }
 }
 
 @keyframes bouncing {
-  0%, 100% {
+  0%,
+  100% {
     -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
   }
   50% {
     -webkit-transform: scale3d(0, 0, 1);
-            transform: scale3d(0, 0, 1);
+    transform: scale3d(0, 0, 1);
   }
 }
