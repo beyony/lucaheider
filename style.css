@@ -25,6 +25,13 @@ body {
   background-image: linear-gradient(315deg, rgba(67, 83, 255, 0) 33%, rgba(67, 83, 255, .25));
 }
 
+#linkSection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: aliceblue;
+}
+
 
 .start-screen {
   display: -webkit-box;
