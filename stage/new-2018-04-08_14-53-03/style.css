@@ -1,0 +1,128 @@
+body {
+    background-color: #777777;
+    font-size: 12px;
+    margin:  0;
+    padding:  0;
+}
+
+.base {
+    height: 9vw;
+    left: 50%;
+    margin: -7.5vw;
+    padding: 3vw;
+    position: absolute;
+    top: 50%;
+    width: 9vw;
+    transform: rotateX(10deg) rotateZ(45deg);
+    transform-style: preserve-3d;
+}
+
+.cube,
+.cube:after,
+.cube:before {
+    content: '';
+    float: left;
+    height: 3vw;
+    position: absolute;
+    width: 3vw;
+}
+
+/* Top */
+
+.cube {
+    background-color: #495b63;
+    position: relative;
+    transform: translateZ(3vw);
+    transform-style: preserve-3d;
+    transition: .25s;
+    box-shadow: inset -1em -1em 1.5em rgba(0, 0, 0, 0.1);
+    animation: anim 2.5s ease-in-out infinite;
+    border-radius: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cube:after {
+    background-color: shade(#05afd1, 10);
+    transform: rotateX(-90deg) translateY(3vw);
+    transform-origin: 100% 100%;
+}
+
+.cube:before {
+    background-color: shade(#05afd1, 20);
+    transform: rotateY(90deg) translateX(3vw);
+    transform-origin: 100% 0;
+}
+
+.cube:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.cube:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.cube:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.cube:nth-child(4) {
+    animation-delay: 0.2s;
+}
+
+.cube:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+.cube:nth-child(6) {
+    animation-delay: 0.3s;
+}
+
+.cube:nth-child(7) {
+    animation-delay: 0.35s;
+}
+
+.cube:nth-child(8) {
+    animation-delay: 0.4s;
+}
+
+.cube:nth-child(9) {
+    animation-delay: 0.45s;
+}
+
+@keyframes anim {
+    50% {
+        transform: translateZ(10vw);
+    }
+}
+
+/* TEXT */
+
+.text {
+    position:  absolute;
+    height:  100%;
+    width:  100%;
+    display:  flex;
+    justify-content:  center;
+    align-items:  center;
+    font-size: 12vw;
+    padding-bottom: 14vw;
+    color: #415865;
+    text-shadow: 0px 2px 18px #00000024;
+}
+
+
+.middle {
+    width: 13vw;
+}
+
+.left {
+    width: 45.5vw;
+    text-align:  right;
+}
+
+.right {
+    width: 45.5vw;
+    text-align: left;
+}
