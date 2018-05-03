@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "http-server ./_site"
+    "serve": "http-server ./docs"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/beyony/lucaheider#readme",
   "dependencies": {
-    "http-server": "^0.11.1",
-    "nodemon": "^1.17.3"
+    "http-server": "^0.11.1"
   }
 }
