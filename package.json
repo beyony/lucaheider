@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "http-server ./docs"
+    "serve": "http-server ./docs",
+    "build:watch": "jekyll build --watch",
+    "start": "concurrently \" npm run build:watch \" \" npm run serve \""
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,7 @@
   },
   "homepage": "https://github.com/beyony/me#readme",
   "dependencies": {
+    "concurrently": "^3.5.1",
     "http-server": "^0.11.1"
   }
 }
