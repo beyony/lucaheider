@@ -18,6 +18,12 @@ img {
   display: inline-block;
 }
 
+.blog-post-link {
+  text-decoration: none;
+  color: #333;
+}
+
+
 .w-block {
   display: block;
 }
@@ -846,7 +852,6 @@ p {
   color: #ccc;
   font-size: 12px;
   line-height: 18px;
-  text-align: center;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -877,7 +882,7 @@ p {
 
 .blog-content {
   display: block;
-  width: 65%;
+  width: 60%;
   margin-right: auto;
   margin-bottom: 52px;
   margin-left: auto;
@@ -993,7 +998,6 @@ p {
   font-size: 20px;
   line-height: 25px;
   font-weight: 400;
-  text-align: center;
   text-transform: uppercase;
 }
 
@@ -1150,7 +1154,7 @@ html.w-mod-js *[data-ix="fade-in"] {
     margin-bottom: 35px;
   }
   .blog-content {
-    width: 75%;
+    width: 60%;
   }
 }
 

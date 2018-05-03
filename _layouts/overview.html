@@ -2,16 +2,20 @@
 
 <body>
     {% include header.html %}
-    {{content}}
-    <ul>
+        {{content}}
+    <div>
         {% for post in site.posts %}
-        <li>
-            <a href="{{ post.url }}">
-                <h2>{{ post.title }}</h2>
-            </a>
-        </li>
+        <div class="blog-post">
+            <div class="heading-wrapper">
+                    <h1 class="blog-headline"><a class="blog-post-link" href="{{ post.url }}">{{ post.title }}</a></h1>
+                <div class="byline-wrapper">
+                    <div class="byline-text">{{ post.date | date_to_string }}</div>
+                </div>
+            </div>
+            <p class="blog-content">{{ post.introduction }}</p>
+        </div>
         {% endfor %}
-    </ul>
+    </div>
 </body>
 
 {% include footer.html %}
