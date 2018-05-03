@@ -1,7 +1,7 @@
 {
-  "name": "lucaheider",
+  "name": "me",
   "version": "1.0.0",
-  "description": "official website",
+  "description": "my official website",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/beyony/lucaheider.git"
+    "url": "git+https://github.com/beyony/me.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/beyony/lucaheider/issues"
+    "url": "https://github.com/beyony/me/issues"
   },
-  "homepage": "https://github.com/beyony/lucaheider#readme",
+  "homepage": "https://github.com/beyony/me#readme",
   "dependencies": {
     "http-server": "^0.11.1"
   }
