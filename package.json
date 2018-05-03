@@ -1,0 +1,25 @@
+{
+  "name": "lucaheider",
+  "version": "1.0.0",
+  "description": "official website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beyony/lucaheider.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beyony/lucaheider/issues"
+  },
+  "homepage": "https://github.com/beyony/lucaheider#readme",
+  "dependencies": {
+    "http-server": "^0.11.1",
+    "nodemon": "^1.17.3"
+  }
+}

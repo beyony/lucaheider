@@ -1,0 +1,19 @@
+{% include meta.html %}
+
+<body>
+    {% include header.html %}
+    {{content}}
+    <ul>
+        {% for post in site.posts %}
+        <li>
+            <a href="/blog{{ post.url }}">
+                <h2>{{ post.title }}</h2>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+
+{% include footer.html %}
+
+</html>
