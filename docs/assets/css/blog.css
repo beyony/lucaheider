@@ -45,6 +45,7 @@ h5,
 h6 {
   font-weight: bold;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .w-container {
@@ -983,7 +984,7 @@ p {
   font-size: 11px;
   line-height: 18px;
   text-align: center;
-  letter-spacing: 1px;
+  letter-spacing: 1px; 
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -999,6 +1000,7 @@ p {
   line-height: 25px;
   font-weight: 400;
   text-transform: uppercase;
+  text-align: left;
 }
 
 .heading-wrapper {
