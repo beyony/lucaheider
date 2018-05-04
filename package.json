@@ -20,7 +20,7 @@
     "url": "https://github.com/beyony/me/issues"
   },
   "homepage": "https://github.com/beyony/me#readme",
-  "dependencies": {
+  "devDependencies": {
     "browser-sync": "^2.24.4",
     "concurrently": "^3.5.1"
   }
