@@ -4,7 +4,7 @@
   <div class="header-section">
     <div class="w-container">
       <a href="index.html" class="blog-home-link w-inline-block">
-        <h1 class="blog-name">Developing The Web</h1>
+        <h1 class="blog-name">{{ page.heading }}</h1>
       </a>
       <div class="navigation-bar">
         <a href="/index.html" class="nav-link" style="color: #303030;">about</a>
@@ -25,9 +25,7 @@
         </div>
       </div>
       <div class="profile-text w-richtext">
-        <h2>Hey you. Curious?</h2>
-        <p>I create stuff. And by stuff I mean webapps, apps, graphics, music, photos and more..</p>
-        <p>During daytime you can find me here:</p>
+        {{ content }}
         <a href="#" class="social-icon-link w-inline-block">
           <img src="assets/images/map-pin.svg" width="20">
         </a>

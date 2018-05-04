@@ -2,7 +2,9 @@
 
 <body>
     {% include header.html %}
+    <div class="section-heading">
         {{content}}
+    </div>
     <div>
         {% for post in site.posts %}
         <div class="blog-post">
@@ -16,8 +18,7 @@
         </div>
         {% endfor %}
     </div>
+    {% include footer.html %}
 </body>
-
-{% include footer.html %}
 
 </html>
