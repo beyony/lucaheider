@@ -1,13 +1,14 @@
-/* entire container, keeps perspective */
+/* entire container, keeps perspective
 
 .flip-container {
   perspective: 1000px;
 }
 
-/* flip the pane when hovered */
+
 
 .flip-container:hover .flipper,
-.flip-container.hover .flipper {
+.flip-container.hover .flipper,
+.flip {
   transform: rotateY(180deg);
 }
 
@@ -23,7 +24,6 @@
   border-radius: 50%;
 }
 
-/* flip speed goes here */
 
 .flipper {
   transition: 0.6s;
@@ -31,37 +31,242 @@
   position: relative;
 }
 
-/* hide back of pane during swap */
 
 .front,
 .back {
   backface-visibility: hidden;
   box-shadow: inset 0 0 20px 5px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+  background-position: center;
+
   position: absolute;
   top: 0;
   left: 0;
   overflow: hidden;
-  /* background image */
-  background-size: cover;
-  background-position: center;
+
 }
 
-/* front pane, placed above back */
 
 .front {
   z-index: 2;
-  /* for firefox 31 */
   transform: rotateY(0deg);
   background-image: url(/assets/images/DSC07442.JPG);
 
 }
 
-/* back, initially hidden pane */
 
 .back {
   transform: rotateY(180deg);
   background-image: url(/assets/images/DSC07464.JPG);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
 
+***********************/
+#map {
+  position: absolute;
+
+  visibility: hidden;
+  opacity: 0;
+}
+
+.back:hover {
+  overflow: visible;
+}
+
+#map:hover {
+  z-index: 10000;
+  overflow: visible;
+  box-shadow: 0 0 10px 10px #0000003d;
+}
+.visible {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* simple */
+.flip-container {
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+
+  -ms-transform: perspective(1000px);
+  -moz-transform: perspective(1000px);
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+
+  border: 1px solid #ccc;
+}
+
+/* START: Accommodating for IE */
+.flip-container:hover .back,
+.flip-container.hover .back {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+
+.flip-container:hover .front,
+.flip-container.hover .front,
+.flip {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.flip:hover {
+  transform: none;
+}
+
+/* END: Accommodating for IE */
+
+.flip-container,
+.front,
+.back {
+  display: block;
+  width: 25vw;
+  height: 25vw;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 25px;
+  border-radius: 50%;
 }
 
 
+.flipper {
+  -webkit-transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+  -ms-transition: 0.6s;
+
+  -moz-transition: 0.6s;
+  -moz-transform: perspective(1000px);
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
+}
+
+.front,
+.back {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  -webkit-transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: rotateY(0deg);
+
+  -moz-transition: 0.6s;
+  -moz-transform-style: preserve-3d;
+  -moz-transform: rotateY(0deg);
+
+  -o-transition: 0.6s;
+  -o-transform-style: preserve-3d;
+  -o-transform: rotateY(0deg);
+
+  -ms-transition: 0.6s;
+  -ms-transform-style: preserve-3d;
+  -ms-transform: rotateY(0deg);
+
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  backface-visibility: hidden;
+  box-shadow: inset 0 0 20px 5px rgba(0, 0, 0, 0.1);
+  background-size: cover;
+  background-position: center;
+}
+
+.front {
+  background-image: url(/assets/images/DSC07442.JPG);
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.back {
+  background-image: url(/assets/images/DSC07464.JPG);
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+/* vertical 
+.vertical.flip-container {
+  position: relative;
+}
+
+.vertical .back {
+  -webkit-transform: rotateX(180deg);
+  -moz-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}
+
+.vertical.flip-container .flipper {
+  -webkit-transform-origin: 100% 213.5px;
+  -moz-transform-origin: 100% 213.5px;
+  -ms-transform-origin: 100% 213.5px;
+  transform-origin: 100% 213.5px;
+}
+
+/* START: Accommodating for IE 
+.vertical.flip-container:hover .back,
+.vertical.flip-container.hover .back {
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  -o-transform: rotateX(0deg);
+  -ms-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+
+.vertical.flip-container:hover .front,
+.vertical.flip-container.hover .front {
+  -webkit-transform: rotateX(180deg);
+  -moz-transform: rotateX(180deg);
+  -o-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}
+ END: Accommodating for IE */
+
+/* START: Accommodating for IE
+.flip-container:hover .back,
+.flip-container.hover .back {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+
+.flip-container:hover .front,
+.flip-container.hover .front {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+ END: Accommodating for IE */

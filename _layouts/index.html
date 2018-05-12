@@ -14,28 +14,28 @@
   </div>
   <div class="section">
     <div class="about-content">
+
+
       <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
         <div class="flipper">
           <div class="front">
-            <!-- front content -->
           </div>
           <div class="back">
-            <!-- back content -->
+            {% include map.html %}
           </div>
         </div>
       </div>
+
       <div class="profile-text w-richtext">
         {{ content }}
-        <a href="#" class="social-icon-link w-inline-block">
+        <span onclick="flip()" class="social-icon-link w-inline-block">
           <img src="assets/images/map-pin.svg" width="20">
-        </a>
+        </span>
       </div>
     </div>
   </div>
-  {% include footer.html %}
-  <div class="section" style="display: none;">
-    {% include map.html %}
-  </div>
+    {% include footer.html %}
+    <script src="/assets/js/main.js"></script>
 </body>
 
 
