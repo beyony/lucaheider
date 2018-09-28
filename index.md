@@ -1,6 +1,7 @@
 ---
 layout: index
 heading: Developing The Web
+title: my official website
 ---
 
 ## Hey you. Curious?
