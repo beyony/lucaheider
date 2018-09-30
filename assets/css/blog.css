@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
+
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+
 html {
   height: 100%;
 }
@@ -7,7 +11,8 @@ body {
   min-height: 100%;
   background-color: #fff;
   font-family: Arial, sans-serif;
-  font-size: 14px;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 16px;
   line-height: 20px;
   color: #333;
 }
@@ -16,6 +21,30 @@ img {
   max-width: 100%;
   vertical-align: middle;
   display: inline-block;
+}
+
+.cover {
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.cover-content {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header-section-blog {
+  position: absolute;
+  width: 100%;
 }
 
 .blog-post-link {
@@ -883,7 +912,7 @@ p {
 
 .blog-content {
   display: block;
-  width: 60%;
+  width: 80%;
   margin-right: auto;
   margin-bottom: 52px;
   margin-left: auto;
@@ -1019,9 +1048,13 @@ p {
 }
 
 .post-heading {
-  font-weight: 400;
-  text-align: center;
-  text-transform: uppercase;
+  font-weight: 800;
+  /* text-transform: uppercase; */
+  color: #fff;
+  font-size: 5vw;
+  margin-bottom: 2vw;
+  font-family: 'Kaushan Script', cursive;
+
 }
 
 .category-heading {
@@ -1156,7 +1189,7 @@ html.w-mod-js *[data-ix="fade-in"] {
     margin-bottom: 35px;
   }
   .blog-content {
-    width: 60%;
+    width: 70%;
   }
 }
 

@@ -1,11 +1,15 @@
-{% include meta.html %} {% include header.html %}
-
-    <section class="section">
-        <div class="w-container">
+{% include meta.html %} 
+    <section class="cover" style="background-image: url('{{ page.background-image }}')">
+        <div class="cover-content">
             <h1 class="post-heading">{{ page.title }}</h1>
             <div class="byline-wrapper">
                 <div class="byline-text">{{ page.date | date_to_string }}</div>
             </div>
+        </div>
+        {% include header.html %}
+    </section>
+    <section class="section">
+        <div class="w-container">
             <div class="blog-content w-richtext">
                 {{ content }}
             </div>
