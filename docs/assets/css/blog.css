@@ -140,7 +140,6 @@ body {
   color: rgba(0, 0, 0, .74);
   font-size: 16px;
   line-height: 20px;
-  background-color: #ffdea24d;
 }
 
 h1 {
@@ -851,7 +850,7 @@ p {
 
 .byline-wrapper {
   margin-bottom: 25px;
-  color: tan;
+  color: #ccc;
   font-size: 12px;
   line-height: 18px;
   letter-spacing: 1px;
