@@ -1,6 +1,7 @@
 ---
 layout: overview
+title: Blog Posts
 ---
 
-## Hey, this blog is not created to entertain you.
-### It’s made to let you think, be more productive and learn about new technologies.
+## Willkommen zu meinem Reiseblog.
+### Hier gebe ich euch einen Einblick in meine Erlebnisse auf meiner Reise.

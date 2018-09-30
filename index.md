@@ -1,9 +1,8 @@
 ---
 layout: index
-heading: Developing The Web
-title: my official website
+heading: Namaste!
+title: Travelblog
 ---
 
-## Hey you. Curious?
-I create stuff. And by stuff I mean webapps, apps, graphics, music, photos and more..
-During daytime you can find me here:
+## Neugierig, wo ich gerade bin?
+Hier kannst du sehen, wo ich mich gerade befinde.
