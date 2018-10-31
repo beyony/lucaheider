@@ -16,12 +16,12 @@ I want to experience local life and culture up as close as possible and I am gra
 I see a lot of possibilities for this, but above all my expertise lies in the following areas:
 
 Photography, design, web development, music production, film production...
-
 You need something with media? I can do that for you!
+
 
 Besides that, I am always open for new things and look forward to all possibilities.
 
 Contact me!
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMDY0NTg5OCwtMjA4MDM4NzU0OF19
+eyJoaXN0b3J5IjpbMTc3NzI3MzU2MiwtMjA4MDM4NzU0OF19
 -->
