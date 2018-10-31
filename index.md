@@ -18,7 +18,9 @@ Photography, design, web development, music production, film production...
 
 You need something with media? I can do that for you!
 
-Besides that, I am always open for new things and look forward to all possibilities!
+Besides that, I am always open for new things and look forward to all possibilities.
+
+Contact me!
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTU5NTY3Mzg0XX0=
+eyJoaXN0b3J5IjpbLTIwODAzODc1NDhdfQ==
 -->
