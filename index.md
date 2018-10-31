@@ -11,6 +11,7 @@ You currently find me in Nepal stomping through the steep slopes of the Himalaya
 I like the principle of giving and taking and authentic travelling far away from mass tourism and private hotel complexes.
 
 I want to experience local life and culture up as close as possible and I am grateful for every opportunity! In return I want to give something back that helps the country and the people. 
+
  
 I see a lot of possibilities for this, but above all my expertise lies in the following areas:
 
@@ -22,5 +23,5 @@ Besides that, I am always open for new things and look forward to all possibilit
 
 Contact me!
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODAzODc1NDhdfQ==
+eyJoaXN0b3J5IjpbLTEzMDY0NTg5OCwtMjA4MDM4NzU0OF19
 -->
